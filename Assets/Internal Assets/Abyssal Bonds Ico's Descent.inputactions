@@ -213,7 +213,7 @@
                 {
                     "name": "binding",
                     "id": "8a300722-e2b8-4734-96b9-3f7e59d76bb1",
-                    "path": "<Mouse>/delta",
+                    "path": "<Mouse>/position",
                     "interactions": "",
                     "processors": "",
                     "groups": "Keyboard&Mouse",
