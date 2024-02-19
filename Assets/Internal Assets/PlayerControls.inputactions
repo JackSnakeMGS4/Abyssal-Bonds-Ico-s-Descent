@@ -1,5 +1,5 @@
 {
-    "name": "Abyssal Bonds Ico's Descent",
+    "name": "PlayerControls",
     "maps": [
         {
             "name": "Player",
@@ -27,6 +27,24 @@
                     "name": "Fire",
                     "type": "Button",
                     "id": "05b5cb56-0c02-4028-8d0c-200a8671facb",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Dash",
+                    "type": "Button",
+                    "id": "958dafa1-3785-46da-84e9-4cdd338441e5",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Fire 2",
+                    "type": "Button",
+                    "id": "1d824e43-a6f5-4219-8b1e-a2b52be409b5",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "",
@@ -275,6 +293,61 @@
                     "action": "Fire",
                     "isComposite": false,
                     "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "22533912-8e15-46d8-95be-9a6302712e16",
+                    "path": "<Gamepad>/buttonEast",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Gamepad",
+                    "action": "Dash",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "2d76abfc-27f6-40ba-b8cb-ab5a601c6e91",
+                    "path": "<Keyboard>/alt",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard&Mouse",
+                    "action": "Dash",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "Charge",
+                    "id": "623ef99b-9862-4a4c-baa3-c1d3dbfceb32",
+                    "path": "ButtonWithOneModifier",
+                    "interactions": "Hold",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Fire 2",
+                    "isComposite": true,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "Modifier",
+                    "id": "c9b6c86d-08d2-4c6d-8e2a-d13d012962e8",
+                    "path": "<Gamepad>/leftShoulder",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Gamepad",
+                    "action": "Fire 2",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "Button",
+                    "id": "759269da-b301-4163-bde5-80ab85d3b7c5",
+                    "path": "<Gamepad>/rightTrigger",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Gamepad",
+                    "action": "Fire 2",
+                    "isComposite": false,
+                    "isPartOfComposite": true
                 }
             ]
         },

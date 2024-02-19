@@ -159,8 +159,8 @@ MonoBehaviour:
   m_StreamingVersion: 20170927
   m_Priority: 10
   m_StandbyUpdate: 2
-  m_LookAt: {fileID: 904820510}
-  m_Follow: {fileID: 904820510}
+  m_LookAt: {fileID: 2036687649}
+  m_Follow: {fileID: 2036687649}
   m_Lens:
     FieldOfView: 60.000004
     OrthographicSize: 10
@@ -188,8 +188,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 73046046}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.18910751, y: 0.000000008447955, z: -0.0000000016269276, w: 0.9819564}
-  m_LocalPosition: {x: 500, y: 2.75, z: 495}
+  m_LocalRotation: {x: 0.22975291, y: -0.0000000187227, z: 0.0000000044198294, w: 0.973249}
+  m_LocalPosition: {x: 500, y: 3.25, z: 495}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -331,8 +331,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 330585543}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.18910751, y: 0.000000008447955, z: -0.0000000016269276, w: 0.9819564}
-  m_LocalPosition: {x: 500, y: 2.75, z: 495}
+  m_LocalRotation: {x: 0.22975291, y: -0.0000000187227, z: 0.0000000044198294, w: 0.973249}
+  m_LocalPosition: {x: 500, y: 3.25, z: 495}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -427,7 +427,7 @@ GameObject:
   - component: {fileID: 377985674}
   - component: {fileID: 377985675}
   m_Layer: 0
-  m_Name: 1
+  m_Name: Sprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -681,6 +681,9 @@ GameObject:
   - component: {fileID: 904820513}
   - component: {fileID: 904820515}
   - component: {fileID: 904820514}
+  - component: {fileID: 904820518}
+  - component: {fileID: 904820517}
+  - component: {fileID: 904820516}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -798,6 +801,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 41008dcc19d848a4680a19c4ffa1ccb7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  speed: 0
+  strafingSpeed: 0
+  dashingSpeed: 0
+  dashCooldown: 0
+  knockbackForce: 0
+  knockbackDuration: 0
+  dashLimit: 0
+  isRecoiling: 0
+  jumpHeight: 0
+  jumpForce: 0
+  gravityScale: 0
+  numberOfJumps: 0
+  GRAVITY: -9.81
+  tempJumpHeight: 0
+  zPos: 0
+  isFalling: 0
+  isJumping: 0
+  jumpCount: 0
 --- !u!114 &904820515
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -810,6 +831,63 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b5f3abd5858528741b0ed487b4153290, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &904820516
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 904820509}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 907500c7dcb31344d879c70cca9e693c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  unit: {fileID: 0}
+  attackPoint: {fileID: 2036687649}
+  projectileSpawner: {fileID: 0}
+  reductionTimer: 2
+  canFire: 1
+  isOverheated: 0
+  currentHeatBuildup: 0
+  recoilDir: {x: 0, y: 0}
+--- !u!114 &904820517
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 904820509}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3d2b9157831f1bb43a4500dcc98c70d6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxPeekDistance: 3
+  targetPos: {x: 0, y: 0, z: 0}
+  isGamepad: 0
+  aimInputRegistering: 0
+  moveInputVector: {x: 0, y: 0}
+--- !u!114 &904820518
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 904820509}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6bcfdf34c725fd64d8c75e924d836713, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tileMaps: []
+  currentCollisionLayer: 
+  currentSortingLayer: 
+  prevCollisionLayer: 
+  prevSortingLayer: 
+  floorZ: 0
+  tempFloorZ: 0
+  entityLocation: {x: 0, y: 0, z: 0}
 --- !u!1 &906059554
 GameObject:
   m_ObjectHideFlags: 3
@@ -857,7 +935,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_BindingMode: 1
-  m_FollowOffset: {x: 0, y: 2, z: -5}
+  m_FollowOffset: {x: 0, y: 2.5, z: -5}
   m_XDamping: 1
   m_YDamping: 1
   m_ZDamping: 1
