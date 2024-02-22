@@ -1,9 +1,9 @@
-# ABYSSAL BONDS: ICO'S DESCENT
+![image](https://github.com/JackSnakeMGS4/Abyssal-Bonds-Ico-s-Descent/assets/30489849/25261a3b-aefd-4e5b-b64b-3956a7f0a7c8)![hallownest_map_hollow_knight_wiki](https://github.com/JackSnakeMGS4/Abyssal-Bonds-Ico-s-Descent/assets/30489849/ab620886-a686-4595-b70f-f60d8a900403)# ABYSSAL BONDS: ICO'S DESCENT
 
 ## About
-Fusing elements found in old GameBoy Advanced games and modern indies, Abyssals Bonds is a 2.5D action/adventure. The player takes on the role of Ico, the eldest of three siblings. Explore the heart of Aurumbite, a collapsing kingdom ripe with mystery and danger, as you search for your missing brother and sister who sought to cure their mother. Once a utopia, the land is now tainted with strange creatures that spread a vicious plague as remaining loyalists and rebels wage war over the final sanctuary. All are hostile as your remaining time dwindles as you are afflicted by this mysterious disease. This is not a story of heroes but one of survivors. To what depths will you go to achieve your goal as your life reaches its end?
+Fusing elements found in old GameBoy Advanced games and modern indies, Abyssals Bonds is a blend of action/adventure and deck builders in a 2.5D world. The player takes on the role of Ico, the eldest of three siblings. Explore the heart of Aurumbite, a collapsing kingdom ripe with mystery and danger, as you search for your missing brother and sister who sought to cure their mother. Once a utopia, the land is now tainted with strange creatures that spread a vicious plague as remaining loyalists and rebels wage war over the final sanctuary. All are hostile as your remaining time dwindles as you are afflicted by this mysterious disease. This is not a story of heroes but one of survivors. To what depths will you go to achieve your goal as your life reaches its end?
 
-![Uploading Map of Aurumbite.jpg…]()
+![Map of Aurumbite](https://github.com/JackSnakeMGS4/Abyssal-Bonds-Ico-s-Descent/assets/30489849/550733d8-e342-43c1-922f-5d913476f29c)
 
 ## Features
 - Visceral, minimalist pixel art.
@@ -16,7 +16,7 @@ Fusing elements found in old GameBoy Advanced games and modern indies, Abyssals 
 - Leave no stone unturned as you search for your missing family - forgotten locales, legends, and more await you.
 
 ## The Inspirations
-![Uploading hallownest_map_hollow_knight_wiki.jpg…]()
+![hallownest_map_hollow_knight_wiki](https://github.com/JackSnakeMGS4/Abyssal-Bonds-Ico-s-Descent/assets/30489849/7f6818f0-d84c-444e-9582-159e4c4c207f)
 
 ### Hollow Knight
 Games with a myriad of ways to explore and discover new content have always enraptured me. Hollow Knight, however, turned me into an addict to games with vast and interconnected worlds that legitimately surprised me. After finding my way into the City of Tears, I was left with, basically, no instructions; however, the sheer amount of content, useful powerups, and unique encounters virtually ensured that I'd slowly, but eventually, uncover nearly every area in the game and ultimately beat the game (well minus the other endings). I aim to capture a bit of that magic as players explore the Kingdom of Aurumbite and are treated to a much smaller but just as interconnected world.
@@ -37,6 +37,6 @@ I'll be upfront with this one. I've never beaten this game and likely never will
 Good ol' Scurge: Hive! This was one of the first Metroidvanias (or Metroidvania-like if you prefer) I played. From its setting to its heroine, Scurge: Hive offered plenty to like, but its greatest feature (at least to me) was infecting the heroine and requiring players to manage its spread. I love this mechanic so much! People are more addicted to screens now than ever before; video games are no exception with an estimated 60 million exhibiting addiction-like symptoms. In addition to that, games are larger and longer than ever before; to achieve anything meaningful in them it's usually required to play at least an hour or more. Scurge: Hive's contagion system offers a potential solution that I'll attempt with Abyssal Bonds. In this game, the clock is always ticking just like in real life; fail to reset your contagion spread in time and you'll die, permanently. My goal is to give you a small gaming session that can be completed within 15-30 minutes. In that time slot, players of all skill levels should be able to achieve something meaningful within the game. Players will have multiple ways of managing their infection - but watch out! The infection rate can also be increased in various ways.
 
 ## Additional Stuff
-![Uploading image.png…]()
+![image](https://github.com/JackSnakeMGS4/Abyssal-Bonds-Ico-s-Descent/assets/30489849/8bd4681d-7b09-4757-9e8f-37b5d9881a36)
 
-Currently, I'm developing this game solo, though in the future I'd like to hire some minions. I'd also like to pitch my game and secure funding through either Kickstarter or a publisher. This repository is strictly for making and polishing the demo for those purposes; that being said if you're interested in contributing, reach out to @happyturtle96 on Discord or email at jaimerivas81@outlook.com and I'll do my best to respond.
+Currently, I'm developing this game solo, though in the future I'd like to hire a couple of folks to help out; I'll most likely pitch my game and secure funding through either Kickstarter or a publisher. This repository is strictly for making and polishing the demo for those purposes; that being said if you're interested in contributing, reach out to @happyturtle96 on Discord or email at jaimerivas81@outlook.com and I'll do my best to respond.
