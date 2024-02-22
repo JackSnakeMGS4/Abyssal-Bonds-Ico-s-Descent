@@ -17,7 +17,7 @@ public class Projectile : MonoBehaviour, IProjectile
     [BoxGroup("Debug"), ReadOnly, ShowInInspector]
     private IObjectPool<Projectile> thisProjectilePool;
     [BoxGroup("Debug"), ReadOnly, ShowInInspector, SerializeField]
-    private Rigidbody2D rb;
+    private Rigidbody rb;
     [BoxGroup("Debug"), ReadOnly, ShowInInspector, SerializeField]
     private SortingGroup sortGroup;
     [BoxGroup("Debug"), ReadOnly, ShowInInspector, SerializeField]
@@ -31,7 +31,7 @@ public class Projectile : MonoBehaviour, IProjectile
 
     private void Awake()
     {
-        rb = GetComponent<Rigidbody2D>();
+        rb = GetComponent<Rigidbody>();
         sortGroup = GetComponent<SortingGroup>();
         sprite = GetComponentInChildren<SpriteRenderer>();
         animator = GetComponentInChildren<Animator>();
@@ -44,7 +44,7 @@ public class Projectile : MonoBehaviour, IProjectile
 
     public void ApplyForce(Vector2 dir)
     {
-        rb.AddForce(dir * force, ForceMode2D.Impulse);
+        rb.AddForce(dir * force, ForceMode.Impulse);
     }
 
     private void Update()
@@ -53,7 +53,7 @@ public class Projectile : MonoBehaviour, IProjectile
     }
 
     // TODO: reset projectile state after it's returned to the pool (to prevent any potential data bleed through)
-    private void OnCollisionEnter2D(Collision2D collision)
+    private void OnCollisionEnter(Collision collision)
     {
         var otherProjectile = collision.gameObject.GetComponent<IProjectile>();
         var damageable = collision.gameObject.GetComponent<IDamageable>();
@@ -89,7 +89,7 @@ public class Projectile : MonoBehaviour, IProjectile
         sortGroup.sortingOrder = spawningEntity.GetComponent<SortingGroup>().sortingOrder;
 
         // Ignore collisions betweens this projectile and its parent
-        Physics2D.IgnoreCollision(gameObject.GetComponent<Collider2D>(), this.spawningEntity.GetComponent<Collider2D>());
+        Physics.IgnoreCollision(gameObject.GetComponent<Collider>(), this.spawningEntity.GetComponent<Collider>());
     }
 
     public void SetSpriteAndAnimator(bool isCharged)

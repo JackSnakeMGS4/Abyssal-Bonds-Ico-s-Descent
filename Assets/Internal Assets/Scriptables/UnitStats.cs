@@ -18,12 +18,9 @@ public enum Stats
     thermalReductionPercentage,
     overheatCooldownTime,
     meleeDamage,
-    shortMeleeRange,
-    longMeleeRange,
+    meleeRange,
     meleeRate,
-    meleeChargeTime,
-    chargedMeleeDmgMod,
-    chargedMeleeCooldown
+    meleeChargeTime
 }
 
 [CreateAssetMenu(fileName = "Stats_", menuName = "Unit Stats", order = 1)]

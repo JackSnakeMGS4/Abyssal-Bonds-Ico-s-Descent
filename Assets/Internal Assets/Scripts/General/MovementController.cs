@@ -12,8 +12,7 @@ public class MovementController : MonoBehaviour
     [TabGroup("Movement"), SerializeField]
     private float speed, strafingSpeed, dashingSpeed, dashCooldown, knockbackForce, knockbackDuration;
     [SerializeField, Range(0f, 3f), TabGroup("Movement"),
-    PropertyTooltip("Modifies range of dash"),
-    InfoBox("Subtract from dash cooldown to get desired value I.E. cooldown - limit value")]
+    InfoBox("Modifies range of dash")]
     private float dashLimit;
     [TabGroup("Movement"), SerializeField, ReadOnly, ShowInInspector]
     private bool isRecoiling = false;
@@ -110,7 +109,7 @@ public class MovementController : MonoBehaviour
     {
         isDashing = true;
         canDash = false;
-        rb.AddForce(vector2 * dashingSpeed, ForceMode.Impulse);
+        rb.AddForce(new Vector3(vector2.x, 0, vector2.y) * dashingSpeed, ForceMode.Impulse);
         yield return new WaitForSeconds(dashLimit);
         isDashing = false;
         yield return new WaitForSeconds(dashCooldown);

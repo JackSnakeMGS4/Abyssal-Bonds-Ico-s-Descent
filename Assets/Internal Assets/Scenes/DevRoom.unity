@@ -188,7 +188,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 73046046}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.22975291, y: -0.0000000187227, z: 0.0000000044198294, w: 0.973249}
+  m_LocalRotation: {x: 0.22975291, y: 0.0000000187227, z: -0.0000000044198294, w: 0.973249}
   m_LocalPosition: {x: 500, y: 3.25, z: 495}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -222,6 +222,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 277132272}
+  - component: {fileID: 277132273}
   m_Layer: 0
   m_Name: Managers
   m_TagString: Untagged
@@ -244,6 +245,23 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &277132273
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 277132271}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f62b34fe240fd3f48a9681c34ec6e96f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  projectilePrefab: {fileID: 8683549136323967510, guid: ab9197cca9befa240aeaa9c757704188,
+    type: 3}
+  maxSize: 500
+  inactiveCount: 0
+  activeCount: 0
 --- !u!1 &330585543
 GameObject:
   m_ObjectHideFlags: 0
@@ -331,7 +349,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 330585543}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.22975291, y: -0.0000000187227, z: 0.0000000044198294, w: 0.973249}
+  m_LocalRotation: {x: 0.22975291, y: 0.0000000187227, z: -0.0000000044198294, w: 0.973249}
   m_LocalPosition: {x: 500, y: 3.25, z: 495}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -801,13 +819,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 41008dcc19d848a4680a19c4ffa1ccb7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 0
-  strafingSpeed: 0
-  dashingSpeed: 0
-  dashCooldown: 0
-  knockbackForce: 0
-  knockbackDuration: 0
-  dashLimit: 0
+  speed: 8
+  strafingSpeed: 5
+  dashingSpeed: 12
+  dashCooldown: 1.5
+  knockbackForce: 3
+  knockbackDuration: 0.1
+  dashLimit: 0.3
   isRecoiling: 0
   jumpHeight: 0
   jumpForce: 0
@@ -843,9 +861,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 907500c7dcb31344d879c70cca9e693c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  unit: {fileID: 0}
+  unit: {fileID: 11400000, guid: e36abdb63f393d746b3528746ce68f33, type: 2}
   attackPoint: {fileID: 2036687649}
-  projectileSpawner: {fileID: 0}
+  projectileSpawner: {fileID: 277132273}
   reductionTimer: 2
   canFire: 1
   isOverheated: 0
@@ -960,8 +978,8 @@ MonoBehaviour:
   m_LookaheadTime: 0
   m_LookaheadSmoothing: 0
   m_LookaheadIgnoreY: 0
-  m_HorizontalDamping: 0.5
-  m_VerticalDamping: 0.5
+  m_HorizontalDamping: 0
+  m_VerticalDamping: 0
   m_ScreenX: 0.5
   m_ScreenY: 0.5
   m_DeadZoneWidth: 0
