@@ -42,7 +42,7 @@ public class Projectile : MonoBehaviour, IProjectile
         thisProjectilePool = pool;
     }
 
-    public void ApplyForce(Vector2 dir)
+    public void ApplyForce(Vector3 dir)
     {
         rb.AddForce(dir * force, ForceMode.Impulse);
     }

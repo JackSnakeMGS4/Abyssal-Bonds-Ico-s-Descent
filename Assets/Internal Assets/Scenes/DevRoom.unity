@@ -702,6 +702,8 @@ GameObject:
   - component: {fileID: 904820518}
   - component: {fileID: 904820517}
   - component: {fileID: 904820516}
+  - component: {fileID: 904820520}
+  - component: {fileID: 904820519}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -906,6 +908,38 @@ MonoBehaviour:
   floorZ: 0
   tempFloorZ: 0
   entityLocation: {x: 0, y: 0, z: 0}
+--- !u!210 &904820519
+SortingGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 904820509}
+  m_Enabled: 1
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_SortAtRoot: 0
+--- !u!114 &904820520
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 904820509}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c67019f44fbd32846a2d22397980ca18, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  reticle: {fileID: 0}
+  animator: {fileID: 0}
+  spriteGameObject: {fileID: 0}
+  sprite: {fileID: 0}
+  originalTransform: {x: 0, y: 0, z: 0}
+  sortGroup: {fileID: 0}
+  aimLine: {fileID: 0}
+  crosshair: {fileID: 0}
 --- !u!1 &906059554
 GameObject:
   m_ObjectHideFlags: 3
@@ -954,9 +988,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_BindingMode: 1
   m_FollowOffset: {x: 0, y: 2.5, z: -5}
-  m_XDamping: 1
-  m_YDamping: 1
-  m_ZDamping: 1
+  m_XDamping: 0
+  m_YDamping: 0
+  m_ZDamping: 0
   m_AngularDampingMode: 0
   m_PitchDamping: 0
   m_YawDamping: 0
