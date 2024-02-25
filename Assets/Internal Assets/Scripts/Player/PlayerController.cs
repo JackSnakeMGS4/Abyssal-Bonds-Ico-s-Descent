@@ -6,7 +6,7 @@ public class PlayerController : MonoBehaviour
 {
     private MovementController movementController;
     private InputController inputController;
-    // private AnimationController animController;
+    private GraphicsController graphicsController;
     private CollisionsController collisionsController;
     private Ranged rangedController;
     // private Melee meleeController;
@@ -15,7 +15,7 @@ public class PlayerController : MonoBehaviour
     {
         inputController = GetComponent<InputController>();
         movementController = GetComponent<MovementController>();
-        // animController = GetComponent<AnimationController>();
+        graphicsController = GetComponent<GraphicsController>();
         collisionsController = GetComponent<CollisionsController>();
         rangedController = GetComponent<Ranged>();
         // meleeController = GetComponent<Melee>();
@@ -25,22 +25,23 @@ public class PlayerController : MonoBehaviour
     private void Start()
     {
         inputController.AssignGameplayControls();
-        // animController.SetupSprite();
+        graphicsController.SetupSprite();
         collisionsController.SetupCollisions();
         SetupShootingInputEvents();
         // SetupMeleeInputEvents();
 
         inputController.inputActions.Player.Dash.performed += _ =>
         movementController.DoDash(inputController.MovementInput(), collisionsController.m_rb);
-
+        inputController.inputActions.Player.Jump.performed += _ =>
+        movementController.Jump();
     }
 
     private void Update()
     {
         // UpdateCurrentTileLayer();
-        // DetectGroundCollision();
+        DetectGroundCollision();
         // UpdateMeleeDirection();
-        // UpdateAnimController();
+        UpdateGraphics();
         UpdateAim();
     }
 
@@ -61,13 +62,13 @@ public class PlayerController : MonoBehaviour
     // private void SetupMeleeInputEvents()
     // {
     //     inputController.inputActions.Player.Melee.performed += _ =>
-    //     animController.PlayBasicMeleeAnim(meleeController.m_canBasicMelee);
+    //     graphicsController.PlayBasicMeleeAnim(meleeController.m_canBasicMelee);
     //     inputController.inputActions.Player.Melee.performed += _ =>
     //     meleeController.BasicHit();
 
     //     #region Heavy Melee Input Setup
     //     inputController.inputActions.Player.Melee2.performed += _ =>
-    //     animController.PlayHeavyMeleeAnim(meleeController.m_canHeavyMelee);
+    //     graphicsController.PlayHeavyMeleeAnim(meleeController.m_canHeavyMelee);
     //     inputController.inputActions.Player.Melee2.performed += _ =>
     //     meleeController.ChargedHit();
     //     inputController.inputActions.Player.Melee2.performed += _ =>
@@ -80,13 +81,13 @@ public class PlayerController : MonoBehaviour
         inputController.inputActions.Player.Fire.performed += _ =>
         rangedController.Fire(inputController.m_targetPos, inputController.IsAiming());
         inputController.inputActions.Player.Fire.performed += _ =>
-        //animController.PlayBasicShotAnim(inputController.IsAiming());
+        //graphicsController.PlayBasicShotAnim(inputController.IsAiming());
 
         #region Heavy Shot Input Setup
         inputController.inputActions.Player.Fire2.performed += _ =>
         rangedController.FireCharged(inputController.m_targetPos, inputController.IsAiming());
         inputController.inputActions.Player.Fire2.performed += _ =>
-        //animController.PlayHeavyShotAnim(inputController.IsAiming());
+        //graphicsController.PlayHeavyShotAnim(inputController.IsAiming());
         inputController.inputActions.Player.Fire2.performed += _ =>
         movementController.ApplyRecoil(rangedController.m_recoilDir, collisionsController.m_rb);
         /*inputController.inputActions.Player.Fire2.performed += _ =>
@@ -94,44 +95,42 @@ public class PlayerController : MonoBehaviour
         #endregion
     }
 
-    // private void DetectGroundCollision()
-    // {
-    //     if (collisionsController.CollidedWithGround(movementController.m_zPos))
-    //     {
-    //         animController.PlayLandingAnim();
-    //         movementController.ResetJump(collisionsController.m_floorZ);
-    //     }
-    // }
+    private void DetectGroundCollision()
+    {
+        if (collisionsController.CollidedWithGround(movementController.m_yPos))
+        {
+            graphicsController.PlayLandingAnim();
+            movementController.ResetJump(collisionsController.m_floorY);
+        }
+    }
 
     private bool IsFacingLeft()
     {
         return inputController.MovementInput().x < 0;
     }
 
-    // private void UpdateAnimController()
-    // {
-    //     if(inputController.IsMoving())
-    //     {
-    //         animController.FlipSprite(IsFacingLeft());
-    //         animController.PlayDashAnim(movementController.m_isDashing);
-    //     }
-    //     animController.PlayMovementAnim(inputController.IsMoving());
-    //     animController.PlayJumpAnim(movementController.m_isJumping);
-    //     //set sprite y to z pos from movement controller
-    //     animController.ApplyJumpToSprite(movementController.m_zPos - collisionsController.m_floorZ);
-    // }
+    private void UpdateGraphics()
+    {
+        if (inputController.IsMoving())
+        {
+            graphicsController.FlipSprite(IsFacingLeft());
+            graphicsController.PlayDashAnim(movementController.m_isDashing);
+        }
+        graphicsController.PlayMovementAnim(inputController.IsMoving());
+        graphicsController.PlayJumpAnim(movementController.m_isJumping);
+    }
 
     private void UpdateAim()
     {
         if (inputController.IsAiming())
         {
             inputController.Aim(rangedController.m_attackPoint);
-            // animController.DrawAimingInterface(inputController.m_targetPos, rangedController.m_attackPoint.position, inputController.IsAiming());
+            graphicsController.DrawAimingInterface(inputController.m_targetPos, rangedController.m_attackPoint.position, inputController.IsAiming());
         }
         else
         {
             inputController.ResetAim(rangedController.m_attackPoint);
-            // animController.ResetAimingInterface(rangedController.m_attackPoint.position, inputController.IsAiming());
+            graphicsController.ResetAimingInterface(rangedController.m_attackPoint.position, inputController.IsAiming());
         }
     }
     #endregion

@@ -34,8 +34,8 @@ public class MovementController : MonoBehaviour
     [BoxGroup("Split/Jump Debug"), ShowInInspector, ReadOnly, SerializeField]
     private float tempJumpHeight = 0;
     [BoxGroup("Split/Jump Debug"), ShowInInspector, ReadOnly, SerializeField] 
-    private float zPos = 0;
-    public float m_zPos { get { return zPos; } }
+    private float yPos = 0;
+    public float m_yPos { get { return yPos; } }
     [BoxGroup("Split/Jump Debug"), ShowInInspector, ReadOnly, SerializeField]
     private bool isFalling = false;
     public bool m_isFalling { get { return isFalling; } set { isFalling = value; } }
@@ -130,7 +130,7 @@ public class MovementController : MonoBehaviour
             jumpCount--;
             isJumping = true;
             isFalling = false;
-            tempJumpHeight = zPos + jumpHeight;
+            tempJumpHeight = yPos + jumpHeight;
         }
     }
 
@@ -140,8 +140,8 @@ public class MovementController : MonoBehaviour
         //Rising
         if (isJumping)
         {
-            zPos += jumpForce * Time.deltaTime;
-            if(zPos >= tempJumpHeight)
+            yPos += jumpForce * Time.deltaTime;
+            if(yPos >= tempJumpHeight)
             {
                 isJumping = false;
                 isFalling = true;
@@ -150,13 +150,13 @@ public class MovementController : MonoBehaviour
         // Falling
         if (isFalling)
         {
-            zPos += GRAVITY * gravityScale * Time.deltaTime;
+            yPos += GRAVITY * gravityScale * Time.deltaTime;
         }
     }
 
-    public void ResetJump(float floorZ)
+    public void ResetJump(float floorY)
     {
-        zPos = floorZ;
+        yPos = floorY;
         isFalling = false;
         jumpCount = numberOfJumps;
     }

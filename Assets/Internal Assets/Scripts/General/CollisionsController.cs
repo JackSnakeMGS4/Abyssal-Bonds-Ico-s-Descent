@@ -23,8 +23,8 @@ public class CollisionsController : MonoBehaviour
     private string prevSortingLayer;
 
     [BoxGroup("Properties/Debug/Values"), ShowInInspector, ReadOnly, SerializeField]
-    private float floorZ = 0;
-    public float m_floorZ { get { return floorZ; } }
+    private float floorY = 0;
+    public float m_floorY { get { return floorY; } }
     [BoxGroup("Properties/Debug/Values"), ShowInInspector, ReadOnly, SerializeField]
     private float tempFloorZ = 0;
     [BoxGroup("Properties/Debug/Values"), ShowInInspector, ReadOnly, SerializeField]
@@ -41,10 +41,10 @@ public class CollisionsController : MonoBehaviour
         myCollider = GetComponent<Collider>();
     }
 
-    public bool CollidedWithGround(float zPos)
+    public bool CollidedWithGround(float yPos)
     {
         // Ground Collision Check
-        if (zPos < floorZ)
+        if (yPos < floorY)
         {
             return true;
         }
@@ -83,10 +83,10 @@ public class CollisionsController : MonoBehaviour
         {
             gameObject.layer = LayerMask.NameToLayer(currentCollisionLayer);
             sortingGroup.sortingLayerName = currentSortingLayer;
-            tempFloorZ = floorZ;
+            tempFloorZ = floorY;
             return;
         }
-        floorZ = tempFloorZ;
+        floorY = tempFloorZ;
     }
 
     public void DecreaseCollisionLayer(SortingGroup sortingGroup)
